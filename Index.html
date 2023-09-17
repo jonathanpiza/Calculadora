@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Calculadora</h1>
+        <input  id="response" class="inputresult" disabled value="0" />
+            <table class="table_num">
+                <tr>
+                    <th><button id="7" class="button" onclick="escribir(this)">7</button></th>
+                    <th><button id="8" class="button" onclick="escribir(this)">8</button></th>
+                    <th><button id="9" class="button" onclick="escribir(this)">9</button></th>
+                    <th><button id="x" class="button" onclick="escribir(this)">x</button></th>
+                </tr>
+                <tr>
+                    <th><button id="4" class="button" onclick="escribir(this)">4</button></th>
+                    <th><button id="5" class="button" onclick="escribir(this)">5</button></th>
+                    <th><button id="6" class="button" onclick="escribir(this)">6</button></th>
+                    <th><button id="/" class="button" onclick="escribir(this)">/</button></th>
+                </tr>
+                <tr>
+                    <th><button id="1" class="button" onclick="escribir(this)">1</button></th>
+                    <th><button id="2" class="button" onclick="escribir(this)">2</button></th>
+                    <th><button id="3" class="button" onclick="escribir(this)">3</button></th>
+                    <th><button id="-" class="button" onclick="escribir(this)">-</button></th>
+                </tr>
+                <tr>
+                    <th><button id="=" class="button" onclick="escribir(this)">=</button></th>
+                    <th><button id="0" class="button" onclick="escribir(this)">0</button></th>
+                    <th><button id="%" class="button" onclick="escribir(this)">%</button></th>
+                    <th><button id="+" class="button" onclick="escribir(this)">+</button></th>
+                </tr>
+            </table>
+    </div>
+</body>
+<script>
+    let datos = [];
+    let iterator = 0;
+    function escribir(button){
+        let response = document.getElementById("response");
+        const value = response.value==0?"":response.value;
+        const id = button.id;
+        switch(id){
+            case "+":
+                if(datos.length>0&&datos.length<3){
+                    if(datos[iterator]!=id){
+                        iterator++
+                        response.value = value+id
+                        datos[iterator]=(datos[iterator]==undefined?"":datos[iterator])+id
+                    }
+                }else if(datos.length==3){
+                    console.log("operacion")
+                }
+            break;
+            case "-":
+                if(datos.length>0&&datos.length<3){
+                    if(datos[iterator]!=id){
+                        iterator++
+                        response.value = value+id
+                        datos[iterator]=(datos[iterator]==undefined?"":datos[iterator])+id
+                    }
+                }else if(datos.length==3){
+                    console.log("operacion")
+                }
+            break;
+            case "/":
+                if(datos.length>0&&datos.length<3){
+                    if(datos[iterator]!=id){
+                        iterator++
+                        response.value = value+id
+                        datos[iterator]=(datos[iterator]==undefined?"":datos[iterator])+id
+                    }
+                }else if(datos.length==3){
+                    console.log("operacion")
+                }
+            break;
+            case "x":
+                if(datos.length>0&&datos.length<3){
+                    if(datos[iterator]!=id){
+                        iterator++
+                        response.value = value+id
+                        datos[iterator]=(datos[iterator]==undefined?"":datos[iterator])+id
+                    }
+                }else if(datos.length==3){
+                    console.log("operacion")
+                }
+            break;
+            case "%":
+                if(datos.length>0&&datos.length<3){
+                    
+                }else if(datos.length==3){
+                    console.log("operacion")
+                }
+            break;
+            case "=":
+                
+            break;
+            default:
+                switch(datos[iterator]){
+                    case "+":
+                    case "-":
+                    case "/":
+                    case "x":
+                        iterator++;
+                    break;
+                    case "%":
+                        const porcentaje = datos[0]
+                        response.value = value+id   
+                    break
+                }
+                response.value = value+id
+                datos[iterator]=(datos[iterator]==undefined?"":datos[iterator])+id
+                
+        }
+        console.log(datos)
+        
+    }
 
+    
+</script>
