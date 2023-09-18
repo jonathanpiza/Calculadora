@@ -63,6 +63,7 @@
                     const porcentaje = parseInt(datos[0])/100;
                     response.value = porcentaje
                     datos=[]
+                    iterator=0
                 }else if(datos.length==3){
                     operaciones(datos[1])
                 }
@@ -89,16 +90,28 @@
     function operaciones(operacion){
         switch(operacion){
             case "+":
-                console.log("suma")
+                const suma = parseInt(datos[0])+parseInt(datos[2]);
+                response.value = suma
+                datos=[]
+                iterator=0
             break;
             case "-":
-                console.log("resta")
+                const resta = parseInt(datos[0])-parseInt(datos[2]);
+                response.value = resta
+                datos=[]
+                iterator=0
             break;
             case "/":
-                console.log("dividido")
+                const dividido = parseInt(datos[0])/parseInt(datos[2]);
+                response.value = dividido
+                datos=[]
+                iterator=0
             break;
-            case "*":
-                console.log("multiplicacion")
+            case "x":
+                const multiplicacion = parseInt(datos[0])*parseInt(datos[2]);
+                response.value = multiplicacion
+                datos=[]
+                iterator=0
             break;
         }
     }
